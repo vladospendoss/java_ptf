@@ -22,18 +22,22 @@ public class GroupCreationTests {
     baseUrl = "https://www.katalon.com/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     //авторизация в адресбуке
-    driver.get("http://localhost/addressbook/index.php");
-    driver.findElement(By.name("user")).click();
-    driver.findElement(By.name("user")).clear();
-    driver.findElement(By.name("user")).sendKeys("admin");
-    driver.findElement(By.id("LoginForm")).click();
-    driver.findElement(By.name("pass")).click();
-    driver.findElement(By.name("pass")).clear();
-    driver.findElement(By.name("pass")).sendKeys("secret");
-    driver.findElement(By.xpath("//input[@value='Login']")).click();
+      login();
   }
 
-  @Test
+    private void login() {
+        driver.get("http://localhost/addressbook/index.php");
+        driver.findElement(By.name("user")).click();
+        driver.findElement(By.name("user")).clear();
+        driver.findElement(By.name("user")).sendKeys("admin");
+        driver.findElement(By.id("LoginForm")).click();
+        driver.findElement(By.name("pass")).click();
+        driver.findElement(By.name("pass")).clear();
+        driver.findElement(By.name("pass")).sendKeys("secret");
+        driver.findElement(By.xpath("//input[@value='Login']")).click();
+    }
+
+    @Test
   public void testGroupCreation() throws Exception {
     driver.findElement(By.linkText("groups")).click();
     driver.findElement(By.name("new")).click();
