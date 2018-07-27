@@ -13,4 +13,7 @@ public class ContactsHelper extends HelperBase {
 
     public void submitAddContact() { click(By.name("submit")); }
 
+    public void fillAddForms() {
+
+    }
 }

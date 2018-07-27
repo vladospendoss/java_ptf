@@ -8,6 +8,7 @@ public class AddContactTests extends TestBase {
 
     public void testAddContactTests(){
         app.getNavigationHelper().gotoAddNewPage();
+        app.getContactsHelper().fillAddForms();
         app.getContactsHelper().submitAddContact();
         app.getContactsHelper().returnToHomePage();
     }
