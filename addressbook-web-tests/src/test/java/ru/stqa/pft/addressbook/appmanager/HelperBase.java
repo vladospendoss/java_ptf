@@ -1,7 +1,7 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
+//import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
 public class HelperBase {
@@ -21,12 +21,12 @@ public class HelperBase {
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
     }
-    private boolean isAlertPresent() {
-        try {
-            driver.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
+//    private boolean isAlertPresent() {
+//        try {
+//            driver.switchTo().alert();
+//            return true;
+//        } catch (NoAlertPresentException e) {
+//            return false;
+//        }
+//    }
 }
