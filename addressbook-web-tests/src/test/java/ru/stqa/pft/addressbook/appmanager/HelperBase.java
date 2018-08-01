@@ -13,8 +13,7 @@ public class HelperBase {
     }
 
     protected void click(By locator) {
-        driver.findElement(locator).click();
-    }
+        driver.findElement(locator).click(); }
 
     protected void type(By locator, String text) {
         click(locator);
