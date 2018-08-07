@@ -14,7 +14,6 @@ public class ApplicationManager {
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
     private ContactsHelper groupContacts;
-
     private StringBuffer verificationErrors = new StringBuffer();
 
     public void init() {

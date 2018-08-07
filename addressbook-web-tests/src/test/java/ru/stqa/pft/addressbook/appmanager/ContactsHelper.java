@@ -10,16 +10,18 @@ public class ContactsHelper extends HelperBase {
 
     public void fillContactsForm(ContactData contactData) {
         type(By.name("firstname"), contactData.getFirstname());
-        type(By.name("name_middlename"), contactData.getMiddlename());
-        type(By.name("name_lastname"), contactData.getLastname());
+        type(By.name("middlename"), contactData.getMiddlename());
+        type(By.name("lastname"), contactData.getLastname());
     }
 
-     public void deleteContact() { click(By.xpath("[normalize-space() and normalize-space(.)='Select all'])[1]/following::input[2]"));}
+     public void deleteContact() { click(By.xpath("/html/body/div[1]/div[4]/form[2]/div[2]/input"));}
 
     public void selectContact() { click(By.id("4")); }
 
     public void returnToHomePage() { click(By.linkText("home page")); }
 
     public void submitFormContact() { click(By.name("submit")); }
+
+    public void goToModificationContact() { click(By.xpath("/html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img")); }
 }
 
