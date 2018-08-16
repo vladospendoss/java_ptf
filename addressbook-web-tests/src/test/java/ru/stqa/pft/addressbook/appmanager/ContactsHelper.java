@@ -14,14 +14,18 @@ public class ContactsHelper extends HelperBase {
         type(By.name("lastname"), contactData.getLastname());
     }
 
-     public void deleteContact() { click(By.xpath("/html/body/div[1]/div[4]/form[2]/div[2]/input"));}
-
-    public void selectContact() { click(By.id("4")); }
+    public void deleteContact() { click(By.xpath("/html/body/div[1]/div[4]/form[2]/div[2]/input"));}
 
     public void returnToHomePage() { click(By.linkText("home page")); }
 
     public void submitFormContact() { click(By.name("submit")); }
 
     public void goToModificationContact() { click(By.xpath("/html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img")); }
+
+    public void updateFormContact() { click(By.name("update")); }
+
+    public void selectContact() { click(By.name("selected[]")); }
+
+    public void closeDialogWindow() { driver.switchTo().alert().accept(); }
 }
 
