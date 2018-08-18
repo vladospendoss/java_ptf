@@ -26,18 +26,15 @@ public class GroupHelper extends HelperBase{
 
     public void initGroupCreation() { click(By.name("new")); }
 
-    public void deleteSelectedGroups() {
-        click(By.name("delete"));
-    }
+    public void deleteSelectedGroups() { click(By.name("delete")); }
 
-    public void selectGroup() { click(By.name("selected[]")); }
+    public void selectGroup(int index) {
+        driver.findElements(By.name("selected[]")).get(index).click(); }
 
     public void initGroupModification() { click(By.name("edit")); }
 
     public void submitGroupModification() { click(By.name("update")); }
 
-    public int getGroupCount() {
-      return driver.findElements(By.name("selected[]")).size();
-    }
+    public int getGroupCount() { return driver.findElements(By.name("selected[]")).size(); }
 
 }
