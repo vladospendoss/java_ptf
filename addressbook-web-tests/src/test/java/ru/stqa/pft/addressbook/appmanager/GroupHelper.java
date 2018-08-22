@@ -55,12 +55,19 @@ public class GroupHelper extends HelperBase {
         click(By.name("update"));
     }
 
-    public boolean isThereAGroup() {
+//    public boolean isThereAGroup() {
+//        int groups = driver.findElements(By.name("selected[]")).size();
+//        if (groups > 0) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
+    public void createGroupWhenNoGroups(GroupData group){
         int groups = driver.findElements(By.name("selected[]")).size();
-        if (groups > 0) {
-            return true;
-        } else {
-            return false;
+        if (groups < 1) {
+            createGroup(group);
         }
     }
 
