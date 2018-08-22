@@ -55,6 +55,15 @@ public class GroupHelper extends HelperBase {
         click(By.name("update"));
     }
 
+    public boolean isThereAGroup() {
+        int groups = driver.findElements(By.name("selected[]")).size();
+        if (groups > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public List<GroupData> getGroupList() {
         List<GroupData> groups = new ArrayList<GroupData>();
         List<WebElement> elements = driver.findElements(By.cssSelector("span.group"));
@@ -66,4 +75,5 @@ public class GroupHelper extends HelperBase {
         }
         return groups;
     }
+
 }
