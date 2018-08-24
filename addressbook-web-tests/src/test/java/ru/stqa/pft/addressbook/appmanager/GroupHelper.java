@@ -35,6 +35,13 @@ public class GroupHelper extends HelperBase {
         returnToGroupPage();
     }
 
+    public void createGroupWhenNoGroups(GroupData group){
+        int groups = driver.findElements(By.name("selected[]")).size();
+        if (groups == 0) {
+            createGroup(group);
+        }
+    }
+
     public void initGroupCreation() {
         click(By.name("new"));
     }
@@ -53,22 +60,6 @@ public class GroupHelper extends HelperBase {
 
     public void submitGroupModification() {
         click(By.name("update"));
-    }
-
-//    public boolean isThereAGroup() {
-//        int groups = driver.findElements(By.name("selected[]")).size();
-//        if (groups > 0) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-
-    public void createGroupWhenNoGroups(GroupData group){
-        int groups = driver.findElements(By.name("selected[]")).size();
-        if (groups < 1) {
-            createGroup(group);
-        }
     }
 
     public List<GroupData> getGroupList() {

@@ -11,8 +11,6 @@ public class GroupModificationTests extends TestBase {
     @Test
     public void testGroupModification() {
         app.getNavigationHelper().gotoGroupPage();
-//        if (! app.getGroupHelper().isThereAGroup())
-//        { app.getGroupHelper().createGroup(new GroupData("oleg0", "oleg01", "oleg010")); }
         app.getGroupHelper().createGroupWhenNoGroups(new GroupData("oleg0", "oleg01", "oleg010"));
         List<GroupData> before = app.getGroupHelper().getGroupList();
         app.getGroupHelper().selectGroup(before.size() - 1);

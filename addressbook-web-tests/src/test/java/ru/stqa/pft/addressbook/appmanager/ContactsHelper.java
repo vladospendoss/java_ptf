@@ -3,6 +3,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 public class ContactsHelper extends HelperBase {
 
@@ -27,5 +28,20 @@ public class ContactsHelper extends HelperBase {
     public void selectContact() { click(By.name("selected[]")); }
 
     public void closeDialogWindow() { driver.switchTo().alert().accept(); }
+
+    public void gotoContactPage() {
+        click(By.linkText("add new"));
+    }
+
+    public void createContactWhenNoContacts() {
+        int contacts = driver.findElements(By.name("selected[]")).size();
+        if (contacts == 0) {
+            gotoContactPage();
+            fillContactsForm(new ContactData("test1", "test2", "test3"));
+            submitFormContact();
+            returnToHomePage();
+        }
+    }
+
 }
 
