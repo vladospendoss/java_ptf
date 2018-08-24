@@ -7,7 +7,7 @@ public class ContactModificationTests extends TestBase {
 
     @Test
     public void testModificationContact(){
-        app.getContactsHelper().createContactWhenNoContacts();
+        app.getContactsHelper().createContactWhenNoContacts(new ContactData("durnek", "sad", "oleg"));
         app.getContactsHelper().goToModificationContact();
         app.getContactsHelper().fillContactsForm(new ContactData("oleg1", "oleg2","oleg3"));
         app.getContactsHelper().updateFormContact();
