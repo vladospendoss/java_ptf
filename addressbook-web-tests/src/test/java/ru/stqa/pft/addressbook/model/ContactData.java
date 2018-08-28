@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactData {
+
     private int id;
     private final String firstname;
     private final String middlename;
@@ -13,12 +14,11 @@ public class ContactData {
         this.lastname = lastname;
     }
 
-    public ContactData(int id , String firstname, String middlename, String lastname) {
+    public ContactData (int id, String firstname, String middlename, String lastname) {
         this.id = id;
         this.firstname = firstname;
         this.middlename = middlename;
         this.lastname = lastname;
-
     }
 
     public int getId() { return id; }
@@ -34,8 +34,10 @@ public class ContactData {
         return "ContactData{" +
                 "id=" + id +
                 ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
                 '}';
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -46,7 +48,6 @@ public class ContactData {
 
         if (id != that.id) return false;
         if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        if (middlename != null ? !middlename.equals(that.middlename) : that.middlename != null) return false;
         return lastname != null ? lastname.equals(that.lastname) : that.lastname == null;
     }
 
@@ -54,11 +55,8 @@ public class ContactData {
     public int hashCode() {
         int result = id;
         result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
-        result = 31 * result + (middlename != null ? middlename.hashCode() : 0);
         result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
         return result;
     }
-
-
 }
 

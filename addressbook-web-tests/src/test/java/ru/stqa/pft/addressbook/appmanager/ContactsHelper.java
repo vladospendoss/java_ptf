@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +38,7 @@ public class ContactsHelper extends HelperBase {
 
     public void updateFormContact() { click(By.name("update")); }
 
-//    public void selectContact(int index) { driver.findElements(By.name("selected[]")).get(index).click(); }
+    public void selectContact(int index) { driver.findElements(By.name("selected[]")).get(index).click(); }
 
     public void closeDialogWindow() { driver.switchTo().alert().accept(); }
 
@@ -47,17 +46,16 @@ public class ContactsHelper extends HelperBase {
 
     public List<ContactData> getContactList() {
         List<ContactData> contacts = new ArrayList<ContactData>();
-        List<WebElement> rows = driver.findElements(By.cssSelector("#maintable [name=entry]"));
-        for (WebElement row : rows) {
-            int id = Integer.parseInt(row.findElement(By.cssSelector("input")).getAttribute("value"));
-            List<WebElement> tds = row.findElements(By.cssSelector("td"));
-            String firstname = tds.get(1).getText();
-            String lastname = tds.get(2).getText();
-            ContactData contact = new ContactData(id, firstname, null,lastname);
+        List<WebElement> elements = driver.findElements(By.cssSelector("#maintable [name=entry]"));
+        for (WebElement element : elements) {
+            int id = Integer.parseInt(element.findElement(By.cssSelector("input")).getAttribute("value"));
+            List<WebElement> tds = element.findElements(By.cssSelector("td"));
+            String lastname = tds.get(1).getText();
+            String firstname = tds.get(2).getText();
+            ContactData contact = new ContactData(id, firstname, null, lastname);
             contacts.add(contact);
         }
         return contacts;
     }
-
 }
 
