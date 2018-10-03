@@ -34,9 +34,9 @@ public class ApplicationManager {
         }
     }
 
-    public GroupHelper getGroupHelper() { return groupHelper; }
+    public GroupHelper group() { return groupHelper; }
 
-    public NavigationHelper getNavigationHelper() { return navigationHelper; }
+    public NavigationHelper goTo() { return navigationHelper; }
 
     public ContactsHelper getContactsHelper() { return groupContacts; }
 }

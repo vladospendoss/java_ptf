@@ -7,7 +7,7 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import java.util.List;
 
 public class ContactDeleteTests extends TestBase {
-    @Test
+    @Test(enabled = false)
 
     public void testDeleteContactTest(){
         app.getContactsHelper().createContactWhenNoContacts(new ContactData("oleg", null, "oleg2"));
@@ -15,6 +15,7 @@ public class ContactDeleteTests extends TestBase {
         app.getContactsHelper().selectContact(before.size() - 1);
         app.getContactsHelper().deleteContact();
         app.getContactsHelper().closeDialogWindow();
+        app.getContactsHelper().returnToHomePage();
         List<ContactData> after = app.getContactsHelper().getContactList();
         Assert.assertEquals(after.size(), before.size() - 1);
 

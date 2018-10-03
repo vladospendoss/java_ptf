@@ -30,7 +30,7 @@ public class ContactsHelper extends HelperBase {
 
     public void deleteContact() { click(By.xpath("/html/body/div[1]/div[4]/form[2]/div[2]/input"));}
 
-    public void returnToHomePage() { click(By.linkText("home page")); }
+    public void returnToHomePage() { click(By.linkText("home")); }
 
     public void submitFormContact() { click(By.name("submit")); }
 

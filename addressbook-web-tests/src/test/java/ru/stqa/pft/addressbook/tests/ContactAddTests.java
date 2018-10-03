@@ -10,12 +10,11 @@ import java.util.List;
 
 public class ContactAddTests extends TestBase {
 
-    @Test
+    @Test(enabled = false)
     public void testAddContactTests(){
         List<ContactData> before = app.getContactsHelper().getContactList();
         app.getContactsHelper().gotoContactPage();
-        int nextId = before.get(before.size() - 1).getId() + 1;
-        ContactData contact = new ContactData(nextId, "oleg", null, "oleg2");
+        ContactData contact = new ContactData( "oleg", null, "oleg2");
         app.getContactsHelper().fillContactsForm(contact);
         app.getContactsHelper().submitFormContact();
         app.getContactsHelper().returnToHomePage();
