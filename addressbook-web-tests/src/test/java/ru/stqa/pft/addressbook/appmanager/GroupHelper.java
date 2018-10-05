@@ -28,7 +28,7 @@ public class GroupHelper extends HelperBase {
         type(By.name("group_footer"), groupData.getFooter());
     }
 
-    public void createGroup(GroupData group) {
+    public void create(GroupData group) {
         initGroupCreation();
         fillGroupForm(group);
         submitGroupCreation();
@@ -52,10 +52,10 @@ public class GroupHelper extends HelperBase {
         returnToGroupPage();
     }
 
-    public void create(GroupData group){
+    public void createWhenNoGroup(GroupData group){
         int groups = driver.findElements(By.name("selected[]")).size();
         if (groups == 0) {
-            createGroup(group);
+            create(group);
         }
     }
 
@@ -67,8 +67,7 @@ public class GroupHelper extends HelperBase {
         click(By.name("delete"));
     }
 
-    private void selectGroupById(int id) {
-            driver.findElement(By.cssSelector("input[value='" + id + "']")).click();}
+    private void selectGroupById(int id) { driver.findElement(By.cssSelector("input[value='" + id + "']")).click();}
 
     public void initGroupModification() {
         click(By.name("edit"));
@@ -78,9 +77,7 @@ public class GroupHelper extends HelperBase {
         click(By.name("update"));
     }
 
-    public int count() {
-        return driver.findElements(By.name("selected[]")).size();
-    }
+    public int count() { return driver.findElements(By.name("selected[]")).size(); }
 
     private Groups groupCache = null;
 
