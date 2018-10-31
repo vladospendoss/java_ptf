@@ -9,15 +9,21 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactAddTests extends TestBase {
 
+
+
+   /* получаем список с контактами
+    создаем переменную с параметрами
+    создаем контакт
+    получаем список контактов
+    сраниваем с*/
+
     @Test
-    public void testAddContactTests(){
+    public void testAddContactTests() {
         Contacts before = app.contact().all();
         ContactData contact = new ContactData().withFirstname("Shakal").withLastname("Shakalovich");
         app.contact().create(contact);
         Contacts after = app.contact().all();
         assertThat(after, equalTo(before.withAdded
                 (contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
-
     }
-
 }

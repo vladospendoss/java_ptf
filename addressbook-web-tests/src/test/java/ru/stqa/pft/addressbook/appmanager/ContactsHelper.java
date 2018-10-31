@@ -8,8 +8,6 @@ import ru.stqa.pft.addressbook.model.Contacts;
 
 import java.util.List;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltStrings.split;
-
 public class ContactsHelper extends HelperBase {
 
     public ContactsHelper(WebDriver driver) { super(driver); }
@@ -21,6 +19,9 @@ public class ContactsHelper extends HelperBase {
         type(By.name("home"),contactData.getHomePhone());
         type(By.name("mobile"),contactData.getMobilePhone());
         type(By.name("work"),contactData.getWorkPhone());
+        type(By.name("email"),contactData.getEmail());
+        type(By.name("email2"),contactData.getSecondEmail());
+        type(By.name("email3"),contactData.getThirdEmail());
     }
 
     public void create(ContactData contact) {
@@ -32,7 +33,7 @@ public class ContactsHelper extends HelperBase {
         }
 
     public void modify(ContactData contact){
-        goToModificationContact();
+        goToModifyContact(contact.getId());
         fillContactsForm(contact);
         updateFormContact();
         contactCache = null;
@@ -55,11 +56,11 @@ public class ContactsHelper extends HelperBase {
 
     public void submitFormContact() { click(By.name("submit")); }
 
-    public void goToModificationContact() { click(By.xpath("/html/body/div[1]/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img")); }
-
     public void updateFormContact() { click(By.name("update")); }
 
     public void selectContactById (int id) { driver.findElement(By.cssSelector("input[value='" + id + "']")).click(); }
+
+    public void goToModifyContact(int id) { driver.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s']", id))).click();}
 
     public void closeDialogWindow() { driver.switchTo().alert().accept(); }
 
@@ -80,9 +81,10 @@ public class ContactsHelper extends HelperBase {
             List<WebElement> tds = element.findElements(By.cssSelector("td"));
             String lastname = tds.get(1).getText();
             String firstname = tds.get(2).getText();
-            String[] phones =  tds.get(5).getText().split("\n");
+            String allPhones =  tds.get(5).getText();
+            String allEmail = tds.get(4).getText();
             contactCache.add(new ContactData().withId(id).withFirstname(firstname).withLastname(lastname).
-                    withHomePhone(phones[0]).withMobilePhone(phones[1]).withWorkPhone(phones[2]));
+                    withAllPhones(allPhones).withAllEmail(allEmail));
         }
         return contactCache;
     }
@@ -94,18 +96,22 @@ public class ContactsHelper extends HelperBase {
         String home = driver.findElement(By.name("home")).getAttribute("value");
         String mobile = driver.findElement(By.name("mobile")).getAttribute("value");
         String work = driver.findElement(By.name("work")).getAttribute("value");
+        String email = driver.findElement(By.name("email")).getAttribute("value");
+        String secondEmail = driver.findElement(By.name("email2")).getAttribute("value");
+        String thirdEmail= driver.findElement(By.name("email3")).getAttribute("value");
         driver.navigate().back();
         return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
-                .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
+                .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work)
+                .withEmail(email).withSecondEmail(secondEmail).withThirdEmail(thirdEmail);
     }
 
     private void initContactModificationById(int id) {
-       WebElement checkbox = driver.findElement(By.cssSelector(String.format("input[value'%s']", id)));
+       WebElement checkbox = driver.findElement(By.cssSelector(String.format("input[value='%s']", id)));
        WebElement row = checkbox.findElement(By.xpath("./../.."));
        List<WebElement> cells = row.findElements(By.tagName("td"));
        cells.get(7).findElement(By.tagName("a")).click();
-//       driver.findElement(By.cssSelector(String.format("a[href='edit.php?id=%s'], id"))).click();
     }
+
 }
 
 

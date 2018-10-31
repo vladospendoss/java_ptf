@@ -10,6 +10,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class GroupCreationTests extends TestBase {
 
+
+
+
     @Test
     public void testGroupCreation() {
         app.goTo().groupPage();
@@ -22,6 +25,8 @@ public class GroupCreationTests extends TestBase {
                 before.withAdded(group.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
     }
 
+    /*негативный тест на создание группы с некорректным символом в имени,
+    в проверке сравниваем списки до и после создания */
     @Test
     public void testBadGroupCreation() {
         app.goTo().groupPage();
