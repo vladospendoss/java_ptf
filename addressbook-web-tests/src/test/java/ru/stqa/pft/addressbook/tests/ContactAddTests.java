@@ -19,6 +19,7 @@ public class ContactAddTests extends TestBase {
 
     @Test
     public void testAddContactTests() {
+        app.contact().goToHomePage();
         Contacts before = app.contact().all();
         File photo = new File("src/test/resources/resunak.png") ;
         ContactData contact = new ContactData().withFirstname("Shakal").withLastname("Shakalovich").withPhoto(photo);
