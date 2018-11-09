@@ -11,7 +11,6 @@ public class SessionHelper extends HelperBase {
     }
 
     public void login(String username, String password) {
-        driver.get("http://localhost/addressbook/index.php");
         type(By.name("user"), username);
         driver.findElement(By.id("LoginForm")).click();
         type (By.name("pass"), password);

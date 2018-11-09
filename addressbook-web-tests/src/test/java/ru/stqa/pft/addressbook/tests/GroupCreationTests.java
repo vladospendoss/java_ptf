@@ -16,12 +16,12 @@ import java.util.stream.Collectors;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
 public class GroupCreationTests extends TestBase {
 
-@DataProvider
-public Iterator<Object[]> validGroupsFromXml() throws IOException {
-    try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/groups.xml")))) {
+    @DataProvider
+    public Iterator<Object[]> validGroupsFromXml() throws IOException {
+       try (BufferedReader reader = new BufferedReader(new FileReader(
+            new File("src/test/resources/groups.xml")))) {
         String xml = "";
         String line = reader.readLine();
         while (line != null) {
@@ -32,12 +32,14 @@ public Iterator<Object[]> validGroupsFromXml() throws IOException {
         xStream.processAnnotations(GroupData.class);
         List<GroupData> groups = (List<GroupData>) xStream.fromXML(xml);
         return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
-    }
-}
+        }
+
+  }
 
     @DataProvider
     public Iterator<Object[]> validGroupsFromJson() throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/groups.json")))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(
+                new File("src/test/resources/groups.json")))) {
             String json = "";
             String line = reader.readLine();
             while (line != null) {
@@ -46,7 +48,7 @@ public Iterator<Object[]> validGroupsFromXml() throws IOException {
             }
             Gson gson = new Gson();
             List<GroupData> groups = gson.fromJson(json, new TypeToken<List<GroupData>>() {
-            }.getType()); //List<GroupData>.cl
+            }.getType());
             return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
         }
     }
@@ -71,7 +73,7 @@ public Iterator<Object[]> validGroupsFromXml() throws IOException {
     public void testBadGroupCreation() {
         app.goTo().groupPage();
         Groups before = app.group().all();
-        GroupData group = new GroupData().withName("Oleg1'");
+        GroupData group = new GroupData().withName("Oleg1'").withHeader("Oleg2").withFooter("Oleg3");
         app.group().create(group);
         assertThat(app.group().count(), equalTo(before.size()));
         Groups after = app.group().all();

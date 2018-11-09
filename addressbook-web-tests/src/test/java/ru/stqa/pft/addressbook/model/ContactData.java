@@ -17,17 +17,9 @@ public class ContactData {
     private String secondEmail;
     private String thirdEmail;
     private String allEmail;
-
-    public File getPhoto() {
-        return photo;
-    }
-
-    public ContactData withPhoto(File photo) {
-        this.photo = photo;
-        return this;
-    }
-
     private File photo;
+
+    public File getPhoto() { return photo; }
 
     public int getId() { return id; }
 
@@ -56,6 +48,11 @@ public class ContactData {
     public String getThirdEmail() { return thirdEmail; }
 
     public String getAllEmails() { return allEmail; }
+
+    public ContactData withPhoto(File photo) {
+        this.photo = photo;
+        return this;
+    }
 
     public ContactData withEmail(String email) {
         this.email = email;

@@ -1,8 +1,8 @@
 [
   {
-    "name": "test 0",
-    "header": "header\n0",
-    "footer": "footer\n0"
+    "name": "test",
+    "header": "header",
+    "footer": "footer"
   },
   {
     "name": "test 1",
