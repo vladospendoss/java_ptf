@@ -1,22 +1,40 @@
 package ru.stqa.pft.addressbook.model;
 
+import com.google.gson.annotations.Expose;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 import java.io.File;
+
+@XStreamAlias("group")
 
 public class ContactData {
 
+    @XStreamOmitField
     private int id = Integer.MAX_VALUE;
+    @Expose
     private String firstname;
+    @Expose
     private String middlename;
+    @Expose
     private String lastname;
-    private String group;
+    @Expose
     private String homePhone;
+    @Expose
     private String mobilePhone;
+    @Expose
     private String workPhone;
+    @Expose
     private String allPhones;
+    @Expose
     private String email;
+    @Expose
     private String secondEmail;
+    @Expose
     private String thirdEmail;
+    @Expose
     private String allEmail;
+
     private File photo;
 
     public File getPhoto() { return photo; }
@@ -28,8 +46,6 @@ public class ContactData {
     public String getMiddlename() { return middlename; }
 
     public String getLastname() { return lastname; }
-
-    public String getGroup() { return group; }
 
     public String getHomePhone() { return homePhone; }
 
@@ -99,11 +115,6 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withGroup(String group) {
-        this.group = group;
-        return this;
-    }
-
     public ContactData withHomePhone(String homePhone) {
         this.homePhone = homePhone;
         return this;
@@ -129,30 +140,14 @@ public class ContactData {
 
         if (id != that.id) return false;
         if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        if (middlename != null ? !middlename.equals(that.middlename) : that.middlename != null) return false;
-        if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
-        if (group != null ? !group.equals(that.group) : that.group != null) return false;
-        if (homePhone != null ? !homePhone.equals(that.homePhone) : that.homePhone != null) return false;
-        if (mobilePhone != null ? !mobilePhone.equals(that.mobilePhone) : that.mobilePhone != null) return false;
-        if (workPhone != null ? !workPhone.equals(that.workPhone) : that.workPhone != null) return false;
-        if (email != null ? !email.equals(that.email) : that.email != null) return false;
-        if (secondEmail != null ? !secondEmail.equals(that.secondEmail) : that.secondEmail != null) return false;
-        return thirdEmail != null ? thirdEmail.equals(that.thirdEmail) : that.thirdEmail == null;
+        return lastname != null ? lastname.equals(that.lastname) : that.lastname == null;
     }
 
     @Override
     public int hashCode() {
         int result = id;
         result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
-        result = 31 * result + (middlename != null ? middlename.hashCode() : 0);
         result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
-        result = 31 * result + (group != null ? group.hashCode() : 0);
-        result = 31 * result + (homePhone != null ? homePhone.hashCode() : 0);
-        result = 31 * result + (mobilePhone != null ? mobilePhone.hashCode() : 0);
-        result = 31 * result + (workPhone != null ? workPhone.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (secondEmail != null ? secondEmail.hashCode() : 0);
-        result = 31 * result + (thirdEmail != null ? thirdEmail.hashCode() : 0);
         return result;
     }
 
@@ -161,15 +156,7 @@ public class ContactData {
         return "ContactData{" +
                 "id=" + id +
                 ", firstname='" + firstname + '\'' +
-                ", middlename='" + middlename + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", group='" + group + '\'' +
-                ", homePhone='" + homePhone + '\'' +
-                ", mobilePhone='" + mobilePhone + '\'' +
-                ", workPhone='" + workPhone + '\'' +
-                ", email='" + email + '\'' +
-                ", secondEmail='" + secondEmail + '\'' +
-                ", thirdEmail='" + thirdEmail + '\'' +
                 '}';
     }
 

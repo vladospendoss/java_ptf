@@ -12,7 +12,7 @@ public class SessionHelper extends HelperBase {
 
     public void login(String username, String password) {
         type(By.name("user"), username);
-        driver.findElement(By.id("LoginForm")).click();
+//        driver.findElement(By.id("LoginForm")).click(); шо вы дэлаете в моем хелпере, вы хотите кушатс?
         type (By.name("pass"), password);
         click(By.xpath("//input[@value='Login']"));
     }

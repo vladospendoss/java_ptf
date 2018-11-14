@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
+import java.io.File;
 import java.util.List;
 
 public class ContactsHelper extends HelperBase {
@@ -27,7 +28,8 @@ public class ContactsHelper extends HelperBase {
 
     public void create(ContactData contact) {
             goToAdd();
-            fillContactsForm(contact);
+//            File photo = new File("src/test/resources/resunak.png");
+            fillContactsForm(contact/*.withPhoto(photo)*/);
             submitFormContact();
             contactCache = null;
             goToHomePage();
