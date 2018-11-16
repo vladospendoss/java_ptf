@@ -21,23 +21,23 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactAddTests extends TestBase {
 
-//    @DataProvider
-//    public Iterator<Object[]> validContactsFromXml() throws IOException {
-//        try (BufferedReader reader = new BufferedReader(new FileReader(
-//                new File("src/test/resources/contacts.xml")))) {
-//            String xml = "";
-//            String line = reader.readLine();
-//            while (line != null) {
-//                xml += line;
-//                line = reader.readLine();
-//            }
-//            XStream xStream = new XStream();
-//            xStream.processAnnotations(ContactData.class);
-//            List<ContactData> contacts = (List<ContactData>) xStream.fromXML(xml);
-//            return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
-//        }
-//
-//    }
+    @DataProvider
+    public Iterator<Object[]> validContactsFromXml() throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(
+                new File("src/test/resources/contacts.xml")))) {
+            String xml = "";
+            String line = reader.readLine();
+            while (line != null) {
+                xml += line;
+                line = reader.readLine();
+            }
+            XStream xStream = new XStream();
+            xStream.processAnnotations(ContactData.class);
+            List<ContactData> contacts = (List<ContactData>) xStream.fromXML(xml);
+            return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+        }
+
+    }
 
     @DataProvider
     public Iterator<Object[]> validContactsFromJson() throws IOException {
@@ -68,12 +68,9 @@ public class ContactAddTests extends TestBase {
         app.contact().goToHomePage();
         Contacts before = app.contact().all();
         app.contact().create(contact);
+        assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.contact().all();
-
-        int maxIndex = after.stream()
-                .mapToInt((c) -> c.getId())
-                .max()
-                .getAsInt();
+        int maxIndex = after.stream().mapToInt((c) -> c.getId()).max().getAsInt();
         ContactData contactWithId = contact.withId(maxIndex);
         before = before.withAdded(contactWithId);
         assertThat(after, equalTo(before));

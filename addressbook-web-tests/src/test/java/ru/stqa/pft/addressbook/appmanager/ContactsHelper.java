@@ -28,11 +28,11 @@ public class ContactsHelper extends HelperBase {
 
     public void create(ContactData contact) {
             goToAdd();
-//            File photo = new File("src/test/resources/resunak.png");
-            fillContactsForm(contact/*.withPhoto(photo)*/);
+            File photo = new File("src/test/resources/resunak.png");
+            fillContactsForm(contact.withPhoto(photo));
             submitFormContact();
             contactCache = null;
-            goToHomePage();
+            goToHomePageAfterSubmit();
         }
 
     public void modify(ContactData contact){
@@ -56,6 +56,8 @@ public class ContactsHelper extends HelperBase {
     public void deleteContact() { click(By.xpath("/html/body/div[1]/div[4]/form[2]/div[2]/input"));}
 
     public void goToHomePage() { click(By.linkText("home")); }
+
+    public void goToHomePageAfterSubmit() { click(By.linkText("home page")); }
 
     public void submitFormContact() { click(By.name("submit")); }
 
