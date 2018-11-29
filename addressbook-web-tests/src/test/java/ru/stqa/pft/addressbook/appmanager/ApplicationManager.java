@@ -34,7 +34,7 @@ public class ApplicationManager {
         String target = System.getProperty("target", "local");
 
         properties.load(new FileReader((new File(String.format("src/test/resources/%s.properties", target)))));
-        if (browser.equals(BrowserType.FIREFOX)) {driver = new FirefoxDriver();}
+        if (browser.equals(BrowserType.FIREFOX)) {driver = new FirefoxDriver(); driver.manage().deleteAllCookies();}
         else if ((browser.equals(BrowserType.CHROME))) {driver = new ChromeDriver();}
         else if ((browser.equals(BrowserType.SAFARI))) {driver = new SafariDriver();}
 
