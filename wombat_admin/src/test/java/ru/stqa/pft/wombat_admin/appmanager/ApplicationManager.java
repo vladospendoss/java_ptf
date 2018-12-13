@@ -1,62 +1,38 @@
 package ru.stqa.pft.wombat_admin.appmanager;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.safari.SafariDriver;
+import com.codeborne.selenide.Configuration;
+import org.openqa.selenium.By;
 
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import static org.testng.Assert.fail;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ApplicationManager {
 
-    private final Properties properties;
-    public WebDriver driver;
-
-    private SessionHelper sessionHelper;
     private GradeHelper gradeHelper;
     private NavigationHelper navigationHelper;
-    private StringBuffer verificationErrors = new StringBuffer();
-    private String browser;
 
-    public ApplicationManager(String browser){
-        this.browser = browser;
-        properties = new Properties();
+    public ApplicationManager() {
+        this.navigationHelper = new NavigationHelper();
+        this.gradeHelper = new GradeHelper();
     }
 
-    public void init() throws IOException, InterruptedException {
-//        String target = System.getProperty("local");
+    public void init() {
+        String login = "grades_admin@smedialink.com";
+        String password = "iac5jiB8Y";
 
-        properties.load(new FileReader((new File(String.format("src/test/resources/local.properties")))));
-        if (browser.equals(BrowserType.FIREFOX)) {driver = new FirefoxDriver();}
-        else if ((browser.equals(BrowserType.CHROME))) {
-            driver = new ChromeDriver();
-            driver.manage().deleteAllCookies();
-        }
-        else if ((browser.equals(BrowserType.SAFARI))) {driver = new SafariDriver();}
-
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get(properties.getProperty("web.baseUrl"));
-        gradeHelper = new GradeHelper(driver);
-        navigationHelper = new NavigationHelper(driver);
-        sessionHelper = new SessionHelper(driver);
-        sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("web.adminPassword"));
-    }
-
-    public void stop() {
-        driver.quit();
-        String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }
+        Configuration.browser = "chrome";
+        open("http://0.0.0.0:3000/login");
+        $(By.cssSelector("img[alt*='Enter.']")).click();
+        switchTo().window(1);
+        sleep(4000);
+        $(By.name("login")).setValue(login);
+        try  { $(By.name("passwd")).setValue(password).pressEnter(); }
+            catch (Throwable e) {
+                $(By.id("passp-field-login")).pressEnter();
+                $(By.id("passp-field-passwd")).setValue(password).pressEnter();
+            }
+        $(By.id("nb-2")).click();
+        sleep(5000);
+        switchTo().window(0);
     }
 
     public GradeHelper grade() { return gradeHelper; }

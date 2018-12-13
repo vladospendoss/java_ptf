@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="Wombat_admin" external.linked.project.path="$MODULE_DIR$/../../Wombat_admin" external.root.project.path="$MODULE_DIR$/../../Wombat_admin" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module external.linked.project.id="wombat_admin" external.linked.project.path="$MODULE_DIR$/../../wombat_admin" external.root.project.path="$MODULE_DIR$/../../Wombat_admin" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../wombat_admin">
       <excludeFolder url="file://$MODULE_DIR$/../../wombat_admin/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/../../Wombat_admin/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../wombat_admin/build" />
       <excludeFolder url="file://$MODULE_DIR$/../../wombat_admin/out" />
     </content>
     <orderEntry type="inheritedJdk" />

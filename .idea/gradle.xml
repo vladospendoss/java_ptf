@@ -18,7 +18,7 @@
         <option name="gradleHome" value="$PROJECT_DIR$/gradle" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/Wombat_admin" />
+            <option value="$PROJECT_DIR$/wombat_admin" />
           </set>
         </option>
       </GradleProjectSettings>

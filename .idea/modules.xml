@@ -5,12 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sandbox.iml" filepath="$PROJECT_DIR$/.idea/modules/Sandbox.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sandbox_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Sandbox_main.iml" group="Sandbox" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sandbox_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Sandbox_test.iml" group="Sandbox" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Wombat_admin.iml" filepath="$PROJECT_DIR$/.idea/modules/Wombat_admin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Wombat_admin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Wombat_admin_main.iml" group="Wombat_admin" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Wombat_admin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Wombat_admin_test.iml" group="Wombat_admin" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests_main.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests_main.iml" group="addressbook-web-tests" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/addressbook-web-tests_test.iml" filepath="$PROJECT_DIR$/.idea/modules/addressbook-web-tests_test.iml" group="addressbook-web-tests" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wombat_admin.iml" filepath="$PROJECT_DIR$/.idea/modules/wombat_admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wombat_admin_main.iml" filepath="$PROJECT_DIR$/.idea/modules/wombat_admin_main.iml" group="wombat_admin" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wombat_admin_test.iml" filepath="$PROJECT_DIR$/.idea/modules/wombat_admin_test.iml" group="wombat_admin" />
     </modules>
   </component>
 </project>

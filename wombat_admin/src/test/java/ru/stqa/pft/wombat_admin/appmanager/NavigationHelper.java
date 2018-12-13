@@ -1,11 +1,11 @@
 package ru.stqa.pft.wombat_admin.appmanager;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 
-public class NavigationHelper extends HelperBase {
+import static com.codeborne.selenide.Selenide.$;
 
-    public NavigationHelper(WebDriver driver) { super(driver); }
+public class NavigationHelper {
 
-    public void gradePage() { driver.get("http://0.0.0.0:3000/grades-new/list"); }
+    public void gradePage() { $(By.id("menu__grades")).click(); }
 
 }
