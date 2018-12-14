@@ -11,9 +11,10 @@ public class GradeCreationTest extends TestBase {
         app.grade().assertAddGrade();
     }
 
-//    @Test
-//    public void testGradeModify() {
-//        app.goTo().gradePage();
-//        app.grade().modifyGrade();
-//    }
+    @Test
+    public void testGradeModify() {
+        app.goTo().gradePage();
+        app.grade().modifyGrade();
+        app.grade().assertModifyGrade();
+    }
 }

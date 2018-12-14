@@ -25,11 +25,13 @@ public class ApplicationManager {
         switchTo().window(1);
         sleep(4000);
         $(By.name("login")).setValue(login);
-        try  { $(By.name("passwd")).setValue(password).pressEnter(); }
-            catch (Throwable e) {
-                $(By.id("passp-field-login")).pressEnter();
-                $(By.id("passp-field-passwd")).setValue(password).pressEnter();
-            }
+        boolean passwordField = $(By.name("passwd")).isDisplayed();
+        if (passwordField) {
+            $(By.name("passwd")).setValue(password).pressEnter();
+        } else{
+            $(By.id("passp-field-login")).pressEnter();
+            $(By.id("passp-field-passwd")).setValue(password).pressEnter();
+        }
         $(By.id("nb-2")).click();
         sleep(5000);
         switchTo().window(0);
