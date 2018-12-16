@@ -26,42 +26,6 @@ public class GradeHelper {
 
     Random rand = new Random();
 
-
-    //cоздание нового уникального грейда
-    public void creationGrade() {
-        findIndex();
-        goToCreate();
-        setIndex();
-        setName();
-        setMoney();
-        setPoint();
-        setDescription();
-        goToAddQuest();
-        openQuestGroup();
-        getQuestName();
-        selectQuest();
-        getCountQuestAndCloseQuestModal();
-        submit();
-        closeGradeModal();
-    }
-
-    //редактирование грейда, у которого максимальный грейд
-    public void modifyGrade() {
-        findIndex();
-        goToModify();
-        setIndex();
-        setName();
-        setMoney();
-        setPoint();
-        setDescription();
-        openQuestGroup();
-        getQuestName();
-        selectQuest();
-        getCountQuestAndCloseQuestModal();
-        submit();
-        closeGradeModal();
-    }
-
     //переход к редактированию грейда с максимальным индексом
     public void goToModify() {
         index = String.valueOf(lastUpperGrade);
@@ -93,13 +57,18 @@ public class GradeHelper {
         System.out.println(lastUpperGrade);
     }
 
-    //переход к созданию грейда
-    public void goToCreate() { $(By.cssSelector("div[class*='AddGradeButton']")).click();}
-
     //ввод нового уникального индекса, на 1 больше существующего индекса
+    //если индекс не был получен ранее, ему присваевается 1
     public void setIndex() {
-        index = String.valueOf(lastUpperGrade + 1);
-        $(By.cssSelector("input[placeholder*='12']")).setValue(index); }
+        String nextIndex = String.valueOf(lastUpperGrade + 1);
+        if (index == null){
+            index = "1"; $(By.cssSelector("input[placeholder*='12']")).setValue(index);
+         }
+    else {
+            index = nextIndex;
+            $(By.cssSelector("input[placeholder*='12']")).setValue(index);
+          }
+    }
 
     //ввод нового уникального названия грейда
     public void setName() {
@@ -177,9 +146,9 @@ public class GradeHelper {
 
     //проверка всех полей после создания грейда
     public void assertAddGrade() {
-        sleep(3000);
         $$("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-']").
-                findBy(text(index)).scrollTo().click();
+                findBy(text(index)).waitUntil(visible, 10000).
+                scrollTo().click();
         $$("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-']").
                 findBy(text("G"+index));
         $$("div[class^='gradeName__src-gradesBrandNew-components-GradeBaseInfo-']").
@@ -198,8 +167,8 @@ public class GradeHelper {
 
     //проверка всех полей после редактирования грейда
     public void assertModifyGrade() {
-        sleep(5000);
         closeGradeModal();
+        sleep(2000);
         $$("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-']").
                 findBy(text(index)).click();
         $$("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-']").
@@ -217,6 +186,7 @@ public class GradeHelper {
         $("span[class^='questName__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']").
                 scrollTo().shouldHave(text(questName));
     }
+
 }
 
 

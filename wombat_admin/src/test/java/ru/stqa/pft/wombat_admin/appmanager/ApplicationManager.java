@@ -9,10 +9,12 @@ public class ApplicationManager {
 
     private GradeHelper gradeHelper;
     private NavigationHelper navigationHelper;
+    private ErrorsHelper errorsHelper;
 
     public ApplicationManager() {
         this.navigationHelper = new NavigationHelper();
         this.gradeHelper = new GradeHelper();
+        this.errorsHelper = new ErrorsHelper();
     }
 
 
@@ -40,4 +42,5 @@ public class ApplicationManager {
 
     public NavigationHelper goTo() { return navigationHelper; }
 
+    public ErrorsHelper check() { return errorsHelper; }
 }
