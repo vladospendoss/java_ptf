@@ -1,8 +1,11 @@
 package ru.stqa.pft.addressbook.appmanager;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -30,15 +33,23 @@ public class ApplicationManager {
         properties = new Properties();
     }
 
-    public void init() throws IOException {
+    public void init() throws IOException, InterruptedException {
         String target = System.getProperty("target", "local");
 
         properties.load(new FileReader((new File(String.format("src/test/resources/%s.properties", target)))));
-        if (browser.equals(BrowserType.FIREFOX)) {driver = new FirefoxDriver(); driver.manage().deleteAllCookies();}
-        else if ((browser.equals(BrowserType.CHROME))) {driver = new ChromeDriver();}
+        if (browser.equals(BrowserType.FIREFOX)) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver(); }
+        else if ((browser.equals(BrowserType.CHROME))) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();}
         else if ((browser.equals(BrowserType.SAFARI))) {driver = new SafariDriver();}
+        else if ((browser.equals(BrowserType.IE))) {
+            WebDriverManager.iedriver().setup();
+            driver = new InternetExplorerDriver();
+        }
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(properties.getProperty("web.baseUrl"));
         groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);

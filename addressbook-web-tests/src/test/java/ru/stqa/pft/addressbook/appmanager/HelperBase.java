@@ -2,6 +2,7 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 //import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
@@ -27,17 +28,10 @@ public class HelperBase {
 
     }
 
-    protected void atach (By locator, File file){
-    if (file != null) {
-        driver.findElement(locator).sendKeys(file.getAbsolutePath());
+    protected void atach(By locator, File file) {
+        if (file != null) {
+            driver.findElement(locator).sendKeys(file.getAbsolutePath());
+        }
     }
-    }
-//    private boolean isAlertPresent() {
-//        try {
-//            driver.switchTo().alert();
-//            return true;
-//        } catch (NoAlertPresentException e) {
-//            return false;
-//        }
-//    }
+
 }

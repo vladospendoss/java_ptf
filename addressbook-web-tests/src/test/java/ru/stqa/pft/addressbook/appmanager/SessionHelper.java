@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class SessionHelper extends HelperBase {
@@ -10,7 +11,7 @@ public class SessionHelper extends HelperBase {
         super(driver);
     }
 
-    public void login(String username, String password) {
+    public void login(String username, String password) throws InterruptedException {
         type(By.name("user"), username);
 //        driver.findElement(By.id("LoginForm")).click(); шо вы дэлаете в моем хелпере, вы хотите кушатс?
         type (By.name("pass"), password);
