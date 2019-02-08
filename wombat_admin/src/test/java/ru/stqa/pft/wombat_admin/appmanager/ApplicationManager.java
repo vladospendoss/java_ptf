@@ -17,7 +17,6 @@ public class ApplicationManager {
         this.errorsHelper = new ErrorsHelper();
     }
 
-
     public void init() {
         String login = "grades_admin@smedialink.com";
         String password = "iac5jiB8Y";
@@ -35,6 +34,7 @@ public class ApplicationManager {
             $(By.id("passp-field-passwd")).setValue(password).pressEnter();
         }
         $(By.id("nb-2")).click();
+        sleep(3000);
         switchTo().window(0);
     }
 
