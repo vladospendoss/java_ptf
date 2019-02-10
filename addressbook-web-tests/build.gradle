@@ -12,7 +12,8 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.5'
     compile 'ch.qos.logback:logback-classic:1.1.5'
     testCompile("io.github.bonigarcia:webdrivermanager:3.1.1")
-    classpath "io.qameta.allure:allure-gradle:<latest>"
+//    classpath "io.qameta.allure:allure-gradle:<latest>"
+    implementation 'mysql:mysql-connector-java:5.1.38'
 }
 
 task testGroups(type : Test) {
@@ -26,16 +27,16 @@ task testGroups(type : Test) {
 
 task testContacts(type : Test) {
     useTestNG(){
-        suites 'src/test/resources/testng-contacts.xml'
+        suites 'sr c/test/resources/testng-contacts.xml'
     }
 
     if (project.hasProperty('browser')) {systemProperty 'browser', "${browser}"}
     if (project.hasProperty('browser')) {systemProperty 'target', "${target}"}
 }
 
-apply plugin: 'io.qameta.allure'
-
-allure {
-    autoconfigure = true
-    version = '2.8.1'
-}
+//apply plugin: 'io.qameta.allure'
+//
+//allure {
+//    autoconfigure = true
+//    version = '2.8.1'
+//}

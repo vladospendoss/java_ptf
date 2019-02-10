@@ -53,9 +53,7 @@ public class ContactData {
 
     public String getWorkPhone() { return workPhone; }
 
-    public String getAllPhones() {
-        return allPhones;
-    }
+    public String getAllPhones() { return allPhones; }
 
     public String getEmail() { return email; }
 

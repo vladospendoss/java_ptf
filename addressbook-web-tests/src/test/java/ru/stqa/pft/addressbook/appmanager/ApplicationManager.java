@@ -42,8 +42,11 @@ public class ApplicationManager {
             driver = new FirefoxDriver(); }
         else if ((browser.equals(BrowserType.CHROME))) {
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();}
-        else if ((browser.equals(BrowserType.SAFARI))) {driver = new SafariDriver();}
+            driver = new ChromeDriver();
+        }
+        else if ((browser.equals(BrowserType.SAFARI))) {
+            driver = new SafariDriver();
+        }
         else if ((browser.equals(BrowserType.IE))) {
             WebDriverManager.iedriver().setup();
             driver = new InternetExplorerDriver();
