@@ -1,14 +1,17 @@
 [
   {
     "firstname": "perviiname 0",
+    "middlename": "m 0",
     "lastname": "atchistvo 0"
   },
   {
     "firstname": "perviiname 1",
+    "middlename": "m 1",
     "lastname": "atchistvo 1"
   },
   {
     "firstname": "perviiname 2",
+    "middlename": "m 2",
     "lastname": "atchistvo 2"
   }
 ]

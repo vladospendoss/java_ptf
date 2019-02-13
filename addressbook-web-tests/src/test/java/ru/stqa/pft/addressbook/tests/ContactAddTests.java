@@ -66,10 +66,10 @@ public class ContactAddTests extends TestBase {
     public void testAddContactTests(ContactData contact)
     {
         app.contact().goToHomePage();
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         app.contact().create(contact);
         assertThat(app.contact().count(), equalTo(before.size() + 1));
-        Contacts after = app.contact().all();
+        Contacts after = app.db().contacts();
         int maxIndex = after.stream().mapToInt((c) -> c.getId()).max().getAsInt();
         ContactData contactWithId = contact.withId(maxIndex);
         before = before.withAdded(contactWithId);

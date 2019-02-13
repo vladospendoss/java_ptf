@@ -22,3 +22,4 @@ addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/appmanager/GroupH
 *.class
 addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/model/ContactData.class
 *.class
+*.class

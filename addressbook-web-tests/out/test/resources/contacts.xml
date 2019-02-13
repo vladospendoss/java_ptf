@@ -1,14 +1,17 @@
 <list>
   <group>
     <firstname>perviiname 0</firstname>
+    <middlename>m1</middlename>
     <lastname>atchistvo 0</lastname>
   </group>
   <group>
     <firstname>perviiname 1</firstname>
+    <middlename>m1</middlename>
     <lastname>atchistvo 1</lastname>
   </group>
   <group>
     <firstname>perviiname 2</firstname>
+    <middlename>m1</middlename>
     <lastname>atchistvo 2</lastname>
   </group>
 </list>
