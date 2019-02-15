@@ -10,15 +10,15 @@ public class NavigationHelper {
 
     //переход к экрану со списком грейдов
     public void gradePage() {
-        if($(By.id("menu__grades")).waitUntil(Condition.enabled, 5000).isEnabled())
+
+        if($("div[tabindex*='-1']").isDisplayed() || $(By.id("menu__grades")).is(Condition.not(Condition.enabled)))
         {
-            $(By.id("menu__grades")).click();
-        }
-        else {
             open("http://0.0.0.0:3000/grades/list");
         }
+        else {
+            $(By.id("menu__grades")).click();
+        }
     }
-
 
     //переход к созданию грейда
     public void createGrade() { $(By.cssSelector("div[class*='AddGradeButton']")).click(); }

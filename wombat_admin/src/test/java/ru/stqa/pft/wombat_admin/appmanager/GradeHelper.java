@@ -5,7 +5,6 @@ import com.codeborne.selenide.SelenideElement;
 import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.person.Person;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 
 import java.util.Random;
 
@@ -309,32 +308,61 @@ public class GradeHelper {
 
     public void acceptArchiveGrade() {
            $$("button[class*='ModalArchiveDialogue']").findBy(text("Да")).
-        waitUntil(enabled, 5000).click();
+        waitUntil(enabled, 3000).click();
     }
 
     public void cancelArchiveGrade() {
         $$("button[class*='ModalArchiveDialogue']").findBy(text("Нет")).
-                waitUntil(enabled, 5000).click();
+                waitUntil(enabled, 3000).click();
     }
 
-    public void assertArchivedGrade(){
-        $("div[class^='loader__src-shared-Preloader-__1Jt']").waitUntil(visible,5000);
+    public void openCardAfterArchive(){
+        $("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']").
+                waitUntil(visible,7000);
+        $$("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-']").findBy(matchesText(indexForArchive)).scrollTo().click();
+        $$("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']").
+                findBy(matchesText(indexForArchive)).shouldNotHave(text("Описание:"));
+    }
+
+    public void openCardAfterReturnArchived(){
+        $("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']").
+                waitUntil(visible,7000);
+        $$("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-']").findBy(matchesText(indexForArchive)).scrollTo().click();
+        $$("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']").
+                find(matchesText(indexForArchive)).shouldHave(text("Описание:"));
+    }
+
+
+    public void assertArchived(){
         $("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-__Mt7']").
                 waitUntil(visible, 10000);
-        $$("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-__Mt7']")
-                .findBy(text(indexForArchive)).scrollTo();
-        Assert.assertTrue($$("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-__3pH isArchive__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-__1_m']")
-                .findBy(text(indexForArchive)).waitUntil(visible, 3000).is(disabled));
+        $$("div[class*='isArchive__src']")
+                .findBy(text(indexForArchive)).scrollTo().hover().find("img[data-name^='ARCHIVED']");
     }
 
     public void assertUnArchived(){
-        $("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']").
-                waitUntil(visible, 10000);
+        $("div[class*='backgroundSubstrate__src']").waitUntil(hidden, 3000);
+//        $("div[class^='loader__src-shared-Preloader-__1Jt']").waitUntil(visible,5000);
         $$("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']")
-                .findBy(text(indexForArchive)).scrollTo().is(enabled);
-        $$("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']")
-                .findBy(text(indexForArchive)).is(enabled);
+                .findBy(text(indexForArchive)).scrollTo().hover().find("img[data-name^='NOT_ARCHIVED']");
     }
+
+    public void assertEditIcon(){
+        $("div[class*='backgroundSubstrate__src']").waitUntil(hidden, 3000);
+//        $("div[class^='loader__src-shared-Preloader-__1Jt']").waitUntil(visible,5000);
+        $$("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']")
+                .findBy(text(indexForArchive)).scrollTo().hover().find("img[data-name^='EDIT']");
+    }
+
+    public void assertNoEditIcon(){
+        $("div[class*='backgroundSubstrate__src']").waitUntil(hidden, 3000);
+        $("div[class^='loader__src-shared-Preloader-__1Jt']").waitUntil(visible,5000);
+        $$("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']")
+                .findBy(text(indexForArchive)).scrollTo().hover().
+                shouldNotHave(attribute("alt","Edit"), hidden);
+    }
+
+
 
 
 }

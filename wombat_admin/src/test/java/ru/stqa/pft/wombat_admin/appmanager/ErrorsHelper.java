@@ -12,6 +12,7 @@ public class ErrorsHelper
 
     private static final String ERROR_MESSAGE = "span[class^='errorMessageSpan']";
     private static final String RIGHT_ALERT = "div[class*='rrt-text']";
+    private static final String TITLE_ARCHIVE_MODAL = "div[class*='content__src-gradesBrandNew-components-ModalArchiveDialogue-']";
 
     public void accessCreationAlert() {
         $(RIGHT_ALERT).shouldHave(text("Добавлен новый грейд"));
@@ -71,6 +72,9 @@ public class ErrorsHelper
 
     public void descriptionSpaceError(){ $$(ERROR_MESSAGE).findBy(text("Поле \"Описание\" не может содержать только пробелы")); }
 
+    public void textUnArchivedModal(){ $(TITLE_ARCHIVE_MODAL).shouldHave(text("Отправить грейд в архив?")); }
+
+    public void textArchivedModal(){ $(TITLE_ARCHIVE_MODAL).shouldHave(text("Восстановить грейд из архива?")); }
 
 
     public void clickToSeeRequiredErrors() {
