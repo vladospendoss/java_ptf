@@ -1,0 +1,69 @@
+{
+  "hash" : "e7105c43ada45c9f6e0006854ef1a1d95249231d",
+  "plugins" : {
+    "total" : {
+      "statistic" : {
+        "total" : 37,
+        "passed" : 34,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 3,
+        "broken" : 0
+      },
+      "time" : {
+        "start" : 1550474045780,
+        "stop" : 1550474238963,
+        "duration" : 193183
+      }
+    },
+    "defects" : {
+      "totalCount" : 3,
+      "items" : [ {
+        "count" : 1,
+        "uid" : "9a3b3ec1a49a321b",
+        "message" : "ElementNotFound: Element not found {div[class*='AddGradeButton']}\nExpected: visible",
+        "status" : "FAILED"
+      }, {
+        "count" : 1,
+        "uid" : "acfba8238fcf68cc",
+        "message" : "ElementNotFound: Element not found {div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-'].findBy(text 'G37')}\nExpected: text 'G37'",
+        "status" : "FAILED"
+      }, {
+        "count" : 1,
+        "uid" : "2c8572d25177eae2",
+        "message" : "ElementShouldNot: Element should not have text 'Описание:' {div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-'].findBy(match text 'G1')}\nElement: '<div class=\"wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-__3pH\">G10\nGrade 10\n+\n95 000\n0\n0\nОписание:\nразработчик 10 грейда, рост: Наставник, Техлид, вертикальный рост: Тимлид, Руководитель проектов, Техдиректор</div>'",
+        "status" : "FAILED"
+      } ]
+    },
+    "xunit" : {
+      "totalCount" : 1,
+      "items" : [ {
+        "uid" : "99f3d74bbf651687",
+        "title" : "Gradle suite : Gradle test",
+        "statistic" : {
+          "total" : 37,
+          "passed" : 34,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 3,
+          "broken" : 0
+        }
+      } ]
+    },
+    "behaviors" : {
+      "totalCount" : 1,
+      "items" : [ {
+        "title" : "Without feature",
+        "statistic" : {
+          "total" : 37,
+          "passed" : 34,
+          "pending" : 0,
+          "canceled" : 0,
+          "failed" : 3,
+          "broken" : 0
+        }
+      } ]
+    },
+    "environment" : [ ]
+  }
+}

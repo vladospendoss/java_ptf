@@ -1,11 +1,61 @@
 apply plugin: 'java'
+apply plugin: 'ru.d10xa.allure'
+apply plugin: 'base'
+
+defaultTasks 'clean', '1.5.4'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "ru.d10xa:gradle-allure-plugin:0.5.5"
+    }
+}
+
+
 
 repositories {
     mavenCentral()
+    jcenter()
 }
+
+configurations {
+    agent
+}
+
+
 dependencies {
-    compile 'org.testng:testng:6.14.3'
-    compile 'org.seleniumhq.selenium:selenium-java:3.13.0'
-    testCompile 'com.codeborne:selenide:5.0.1'
+    testCompile group: 'org.testng', name: 'testng', version: '6.9.10'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.13.0'
+    compile group: 'com.codeborne', name: 'selenide', version: '4.12.2'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'io.appium', name: 'java-client', version: '6.1.0'
     compile group: 'io.codearte.jfairy', name: 'jfairy', version: '0.5.0'
+    testCompile "ru.yandex.qatools.allure:allure-testng-adaptor:1.5.4"
+    agent "org.aspectj:aspectjweaver:1.8.0"
 }
+
+
+allure {
+    aspectjweaver = true
+    testNG = true
+    junit= false
+    clean = true
+    allureResultsDir = "$buildDir/allure-results"
+    allureReportDir = "$buildDir/allure-report"
+
+}
+
+test.doFirst {
+    jvmArgs "-javaagent:${configurations.agent.singleFile}"
+}
+
+test {
+    useTestNG()
+    systemProperty 'allure.results.directory', 'allure-results'
+}
+
+task generateAllure(type: Exec) {
+    commandLine "allure", "generate allure-results"
+}
+tasks.withType(Test)*.finalizedBy allureReport
