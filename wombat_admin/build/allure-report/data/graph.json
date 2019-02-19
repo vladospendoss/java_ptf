@@ -1,0 +1,410 @@
+{
+  "testCases" : [ {
+    "uid" : "408fac7523a69420",
+    "name" : "testDeleteQuestGradeModify",
+    "title" : "Test delete quest grade modify",
+    "time" : {
+      "start" : 1550474045780,
+      "stop" : 1550474050343,
+      "duration" : 4563
+    },
+    "severity" : "NORMAL",
+    "status" : "FAILED"
+  }, {
+    "uid" : "bd5b301e9490a3f9",
+    "name" : "testGradeModify",
+    "title" : "Test grade modify",
+    "time" : {
+      "start" : 1550474050344,
+      "stop" : 1550474061201,
+      "duration" : 10857
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "fca944eabe815768",
+    "name" : "testGradeModifyWithNotUniqueIndex",
+    "title" : "Test grade modify with not unique index",
+    "time" : {
+      "start" : 1550474061211,
+      "stop" : 1550474066688,
+      "duration" : 5477
+    },
+    "severity" : "NORMAL",
+    "status" : "FAILED"
+  }, {
+    "uid" : "da903ba24f61d0bd",
+    "name" : "testArchiveGrade",
+    "title" : "Test archive grade",
+    "time" : {
+      "start" : 1550474066691,
+      "stop" : 1550474068566,
+      "duration" : 1875
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "e3cd4eece3e71350",
+    "name" : "testGradeCreationWithoutQuest",
+    "title" : "Test grade creation without quest",
+    "time" : {
+      "start" : 1550474068568,
+      "stop" : 1550474077099,
+      "duration" : 8531
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "15e52bb8d041cd9c",
+    "name" : "testReturnFromArchiveGrade",
+    "title" : "Test return from archive grade",
+    "time" : {
+      "start" : 1550474077104,
+      "stop" : 1550474079215,
+      "duration" : 2111
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "4e31de4e9be9c0e2",
+    "name" : "testGradeCreationWithQuest",
+    "title" : "Test grade creation with quest",
+    "time" : {
+      "start" : 1550474079217,
+      "stop" : 1550474088484,
+      "duration" : 9267
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "427b9274f6cf233c",
+    "name" : "testCancelArchiveGrade",
+    "title" : "Test cancel archive grade",
+    "time" : {
+      "start" : 1550474088488,
+      "stop" : 1550474089524,
+      "duration" : 1036
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "504ea7cde00bfcab",
+    "name" : "testGradeCreationWithQuestsFromDifferentGroups",
+    "title" : "Test grade creation with quests from different groups",
+    "time" : {
+      "start" : 1550474089528,
+      "stop" : 1550474097752,
+      "duration" : 8224
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "80012cde080d5368",
+    "name" : "testCancelReturnFromArchiveGrade",
+    "title" : "Test cancel return from archive grade",
+    "time" : {
+      "start" : 1550474097755,
+      "stop" : 1550474098812,
+      "duration" : 1057
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "3e73a730462cd7d",
+    "name" : "testGradeCreationWithNotUniqueIndex",
+    "title" : "Test grade creation with not unique index",
+    "time" : {
+      "start" : 1550474098814,
+      "stop" : 1550474107808,
+      "duration" : 8994
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "b0b3567f9604a01b",
+    "name" : "testNoEditIconFromArchived",
+    "title" : "Test no edit icon from archived",
+    "time" : {
+      "start" : 1550474107813,
+      "stop" : 1550474109874,
+      "duration" : 2061
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "fb7bb60adfbd0534",
+    "name" : "testCancelGradeCreation",
+    "title" : "Test cancel grade creation",
+    "time" : {
+      "start" : 1550474109877,
+      "stop" : 1550474113705,
+      "duration" : 3828
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "f85d8e15aeac933d",
+    "name" : "testEditIconAfterAddArchive",
+    "title" : "Test edit icon after add archive",
+    "time" : {
+      "start" : 1550474113709,
+      "stop" : 1550474115671,
+      "duration" : 1962
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "6aabe6f413293b20",
+    "name" : "testGradeCreationWithEmptyFields",
+    "title" : "Test grade creation with empty fields",
+    "time" : {
+      "start" : 1550474115674,
+      "stop" : 1550474121182,
+      "duration" : 5508
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "68b4d38b0b45029",
+    "name" : "testEditIconAfterReturnArchive",
+    "title" : "Test edit icon after return archive",
+    "time" : {
+      "start" : 1550474121185,
+      "stop" : 1550474122281,
+      "duration" : 1096
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "674711e028a3c3d2",
+    "name" : "testGradeCreationWithDataFromSpaces",
+    "title" : "Test grade creation with data from spaces",
+    "time" : {
+      "start" : 1550474122283,
+      "stop" : 1550474128320,
+      "duration" : 6037
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "402aee91cf8c92be",
+    "name" : "testReturnFromArchiveGradeAlert",
+    "title" : "Test return from archive grade alert",
+    "time" : {
+      "start" : 1550474128323,
+      "stop" : 1550474129618,
+      "duration" : 1295
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "ba0f3ab9b884f998",
+    "name" : "testGradeCreationWithNegativeValues",
+    "title" : "Test grade creation with negative values",
+    "time" : {
+      "start" : 1550474129620,
+      "stop" : 1550474135778,
+      "duration" : 6158
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "85b7f9d57f3bdb95",
+    "name" : "testInabilityToOpenCardAfterArchive",
+    "title" : "Test inability to open card after archive",
+    "time" : {
+      "start" : 1550474135781,
+      "stop" : 1550474142574,
+      "duration" : 6793
+    },
+    "severity" : "NORMAL",
+    "status" : "FAILED"
+  }, {
+    "uid" : "efd5668e50108822",
+    "name" : "testGradeCreationWithZeroValues",
+    "title" : "Test grade creation with zero values",
+    "time" : {
+      "start" : 1550474142577,
+      "stop" : 1550474149432,
+      "duration" : 6855
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "6420899a9771dea1",
+    "name" : "testOpenCardAfterReturnArchive",
+    "title" : "Test open card after return archive",
+    "time" : {
+      "start" : 1550474149438,
+      "stop" : 1550474151325,
+      "duration" : 1887
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "deeb40e169c60d4d",
+    "name" : "testGradeCreationWithLetterInNumberField",
+    "title" : "Test grade creation with letter in number field",
+    "time" : {
+      "start" : 1550474151327,
+      "stop" : 1550474157788,
+      "duration" : 6461
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "65e97d3df519508b",
+    "name" : "testTextInModalUnArchived",
+    "title" : "Test text in modal un archived",
+    "time" : {
+      "start" : 1550474157791,
+      "stop" : 1550474158440,
+      "duration" : 649
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "5a64c08ee76c59c5",
+    "name" : "testGradeCreationBaseInfo",
+    "title" : "Test grade creation base info",
+    "time" : {
+      "start" : 1550474158443,
+      "stop" : 1550474170971,
+      "duration" : 12528
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "62f910cb806aa828",
+    "name" : "testTextInModalArchived",
+    "title" : "Test text in modal archived",
+    "time" : {
+      "start" : 1550474170974,
+      "stop" : 1550474171735,
+      "duration" : 761
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "980410ea359185f1",
+    "name" : "testGradeCreationDopInfo",
+    "title" : "Test grade creation dop info",
+    "time" : {
+      "start" : 1550474171737,
+      "stop" : 1550474184509,
+      "duration" : 12772
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "be2832354488be38",
+    "name" : "testGradeCreationWithOneQuest",
+    "title" : "Test grade creation with one quest",
+    "time" : {
+      "start" : 1550474184515,
+      "stop" : 1550474203402,
+      "duration" : 18887
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "2492b00cc498683b",
+    "name" : "testGradeCreationInfoWithQuestsFromDifferentGroups",
+    "title" : "Test grade creation info with quests from different groups",
+    "time" : {
+      "start" : 1550474203405,
+      "stop" : 1550474217627,
+      "duration" : 14222
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "452ed49172c0a8ac",
+    "name" : "testNotCacheCreationAfterCancel",
+    "title" : "Test not cache creation after cancel",
+    "time" : {
+      "start" : 1550474217631,
+      "stop" : 1550474220975,
+      "duration" : 3344
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "f0df8edfbc1556e",
+    "name" : "testNotCacheCreationAfterCreate",
+    "title" : "Test not cache creation after create",
+    "time" : {
+      "start" : 1550474220977,
+      "stop" : 1550474226713,
+      "duration" : 5736
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "99a2f37f35023348",
+    "name" : "testGradeAlertCreation",
+    "title" : "Test grade alert creation",
+    "time" : {
+      "start" : 1550474226716,
+      "stop" : 1550474231264,
+      "duration" : 4548
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "7b22b23f80feaaca",
+    "name" : "testGradeAlertCreationNotUnique",
+    "title" : "Test grade alert creation not unique",
+    "time" : {
+      "start" : 1550474231265,
+      "stop" : 1550474234648,
+      "duration" : 3383
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "32248cd1d4bb49e1",
+    "name" : "testGradeErrorsEmpty",
+    "title" : "Test grade errors empty",
+    "time" : {
+      "start" : 1550474234651,
+      "stop" : 1550474235219,
+      "duration" : 568
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "a2c32e268011a97c",
+    "name" : "testGradeErrorsRequired",
+    "title" : "Test grade errors required",
+    "time" : {
+      "start" : 1550474235221,
+      "stop" : 1550474236337,
+      "duration" : 1116
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "76f64b1562e1fae7",
+    "name" : "testGradeErrorsOnlyNumbers",
+    "title" : "Test grade errors only numbers",
+    "time" : {
+      "start" : 1550474236339,
+      "stop" : 1550474237883,
+      "duration" : 1544
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  }, {
+    "uid" : "7826369886d238e9",
+    "name" : "testGradeErrorsSpacesInstead",
+    "title" : "Test grade errors spaces instead",
+    "time" : {
+      "start" : 1550474237884,
+      "stop" : 1550474238963,
+      "duration" : 1079
+    },
+    "severity" : "NORMAL",
+    "status" : "PASSED"
+  } ]
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2019-02-18T07:14:28" hostname="Mac-mini-kuku-epta.local" time="170.396">
+  <properties/>
+  <testcase name="testGradeCreationWithoutQuest" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="8.532"/>
+  <testcase name="testGradeCreationWithQuest" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="9.268"/>
+  <testcase name="testGradeCreationWithQuestsFromDifferentGroups" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="8.226"/>
+  <testcase name="testGradeCreationWithNotUniqueIndex" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="8.995"/>
+  <testcase name="testCancelGradeCreation" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="3.829"/>
+  <testcase name="testGradeCreationWithEmptyFields" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="5.509"/>
+  <testcase name="testGradeCreationWithDataFromSpaces" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="6.038"/>
+  <testcase name="testGradeCreationWithNegativeValues" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="6.158"/>
+  <testcase name="testGradeCreationWithZeroValues" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="6.858"/>
+  <testcase name="testGradeCreationWithLetterInNumberField" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="6.462"/>
+  <testcase name="testGradeCreationBaseInfo" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="12.529"/>
+  <testcase name="testGradeCreationDopInfo" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="12.772"/>
+  <testcase name="testGradeCreationWithOneQuest" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="18.891"/>
+  <testcase name="testGradeCreationInfoWithQuestsFromDifferentGroups" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="14.224"/>
+  <testcase name="testNotCacheCreationAfterCancel" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="3.347"/>
+  <testcase name="testNotCacheCreationAfterCreate" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="5.737"/>
+  <testcase name="testGradeAlertCreation" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="4.55"/>
+  <testcase name="testGradeAlertCreationNotUnique" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="3.383"/>
+  <testcase name="testGradeErrorsEmpty" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="0.57"/>
+  <testcase name="testGradeErrorsRequired" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="1.117"/>
+  <testcase name="testGradeErrorsOnlyNumbers" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="1.545"/>
+  <testcase name="testGradeErrorsSpacesInstead" classname="ru.stqa.pft.wombat_admin.tests.GradeCreationTest" time="1.08"/>
+  <system-out><![CDATA[38
+39
+40
+41
+41
+41
+42
+43
+44
+45
+46
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
