@@ -2,12 +2,15 @@ package ru.stqa.pft.wombat_admin.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Severity;
+import ru.yandex.qatools.allure.model.SeverityLevel;
 
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class GradeCreationTest extends TestBase {
 
     @Test(priority = 1)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationWithoutQuest() {
         app.goTo().gradePage();
         int before = app.grade().getSizeList();
@@ -22,6 +25,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 2)
+    @Severity(SeverityLevel.BLOCKER)
     public void testGradeCreationWithQuest() {
         app.goTo().gradePage();
         app.grade().findMaxIndex();
@@ -35,6 +39,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 3)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationWithQuestsFromDifferentGroups() {
         app.goTo().gradePage();
         app.grade().findMaxIndex();
@@ -48,6 +53,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 4)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationWithNotUniqueIndex(){
         app.goTo().gradePage();
         int before = app.grade().getSizeList();
@@ -62,6 +68,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 5)
+    @Severity(SeverityLevel.CRITICAL)
     public void testCancelGradeCreation() {
         app.goTo().gradePage();
         app.goTo().createGrade();
@@ -72,6 +79,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 6)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationWithEmptyFields() {
         app.goTo().gradePage();
         int before = app.grade().getSizeList();
@@ -85,6 +93,7 @@ public class GradeCreationTest extends TestBase {
 
 
     @Test(priority = 7)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationWithDataFromSpaces() {
         app.goTo().gradePage();
         int before = app.grade().getSizeList();
@@ -98,6 +107,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 8)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationWithNegativeValues() {
         app.goTo().gradePage();
         int before = app.grade().getSizeList();
@@ -111,6 +121,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 9)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationWithZeroValues() {
         app.goTo().gradePage();
         int before = app.grade().getSizeList();
@@ -124,6 +135,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 10)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationWithLetterInNumberField() {
         app.goTo().gradePage();
         int before = app.grade().getSizeList();
@@ -138,6 +150,7 @@ public class GradeCreationTest extends TestBase {
 
 
     @Test(priority = 11)
+    @Severity(SeverityLevel.NORMAL)
     public void testGradeCreationBaseInfo() {
         app.goTo().gradePage();
         app.grade().findMaxIndex();
@@ -149,7 +162,8 @@ public class GradeCreationTest extends TestBase {
         app.grade().assertBaseInfoAdd();
     }
 
-    @Test(priority = 12)/*лоууууу*/
+    @Test(priority = 12)
+    @Severity(SeverityLevel.NORMAL)
     public void testGradeCreationDopInfo() {
         app.goTo().gradePage();
         app.grade().findMaxIndex();
@@ -160,7 +174,8 @@ public class GradeCreationTest extends TestBase {
         app.grade().assertDescriptionAdd();
     }
 
-    @Test(priority = 13)/*лоууууу*/
+    @Test(priority = 13)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationWithOneQuest() {
         app.goTo().gradePage();
         app.grade().findMaxIndex();
@@ -173,6 +188,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 14)
+    @Severity(SeverityLevel.CRITICAL)
     public void testGradeCreationInfoWithQuestsFromDifferentGroups() {
         app.goTo().gradePage();
         app.grade().findMaxIndex();
@@ -185,6 +201,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 15)
+    @Severity(SeverityLevel.MINOR)
     public void testNotCacheCreationAfterCancel() {
         app.goTo().gradePage();
         app.goTo().createGrade();
@@ -196,6 +213,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 16)
+    @Severity(SeverityLevel.MINOR)
     public void testNotCacheCreationAfterCreate() {
         app.goTo().gradePage();
         app.goTo().createGrade();
@@ -208,6 +226,7 @@ public class GradeCreationTest extends TestBase {
 
 
     @Test(priority = 17)
+    @Severity(SeverityLevel.NORMAL)
     public void testGradeAlertCreation(){
         app.goTo().gradePage();
         app.grade().findMaxIndex();
@@ -218,6 +237,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 18)
+    @Severity(SeverityLevel.NORMAL)
     public void testGradeAlertCreationNotUnique(){
         app.goTo().gradePage();
         app.goTo().createGrade();
@@ -227,6 +247,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 19)
+    @Severity(SeverityLevel.NORMAL)
     public void testGradeErrorsEmpty(){
         app.goTo().gradePage();
         app.goTo().createGrade();
@@ -235,6 +256,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 20)
+    @Severity(SeverityLevel.NORMAL)
     public void testGradeErrorsRequired(){
         app.goTo().gradePage();
         app.goTo().createGrade();
@@ -242,6 +264,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 21)
+    @Severity(SeverityLevel.NORMAL)
     public void testGradeErrorsOnlyNumbers(){
         app.goTo().gradePage();
         app.goTo().createGrade();
@@ -251,6 +274,7 @@ public class GradeCreationTest extends TestBase {
     }
 
     @Test(priority = 22)
+    @Severity(SeverityLevel.NORMAL)
     public void testGradeErrorsSpacesInstead(){
         app.goTo().gradePage();
         app.goTo().createGrade();

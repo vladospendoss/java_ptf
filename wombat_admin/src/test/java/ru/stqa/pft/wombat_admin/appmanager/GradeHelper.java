@@ -319,9 +319,9 @@ public class GradeHelper {
     public void openCardAfterArchive(){
         $("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']").
                 waitUntil(visible,7000);
-        $$("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-']").findBy(matchesText(indexForArchive)).scrollTo().click();
+        $$("div[class^='grade__src-gradesBrandNew-components-GradeBaseInfo-']").findBy(exactText(indexForArchive)).scrollTo().click();
         $$("div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-']").
-                findBy(matchesText(indexForArchive)).shouldNotHave(text("Описание:"));
+                findBy(exactText(indexForArchive)).shouldNotHave(text("Описание:"));
     }
 
     public void openCardAfterReturnArchived(){

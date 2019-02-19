@@ -1,12 +1,13 @@
 package ru.stqa.pft.wombat_admin.tests;
 
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Severity;
+import ru.yandex.qatools.allure.model.SeverityLevel;
 
 public class GradeArchiveTest extends TestBase {
 
-    //не только лишь все эти тесты работают, не только лишь все могут работать
-
     @Test (priority = 1)
+    @Severity(SeverityLevel.BLOCKER)
     public void testArchiveGrade() {
         app.goTo().gradePage();
         app.grade().openModalNotArchivedGrade();
@@ -15,6 +16,7 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 2)
+    @Severity(SeverityLevel.BLOCKER)
     public void testReturnFromArchiveGrade() {
         app.goTo().gradePage();
         app.grade().openModalArchivedGrade();
@@ -23,6 +25,7 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 3)
+    @Severity(SeverityLevel.CRITICAL)
     public void testCancelArchiveGrade() {
         app.goTo().gradePage();
         app.grade().openModalNotArchivedGrade();
@@ -31,6 +34,7 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 4)
+    @Severity(SeverityLevel.CRITICAL)
     public void testCancelReturnFromArchiveGrade() {
         app.goTo().gradePage();
         app.grade().openModalArchivedGrade();
@@ -39,6 +43,7 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 5)
+    @Severity(SeverityLevel.CRITICAL)
     public void testNoEditIconFromArchived() {
         app.goTo().gradePage();
         app.grade().openModalArchivedGrade();
@@ -47,6 +52,7 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 6)
+    @Severity(SeverityLevel.CRITICAL)
     public void testEditIconAfterAddArchive() {
         app.goTo().gradePage();
         app.grade().openModalArchivedGrade();
@@ -55,7 +61,8 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 7)
-    public void testEditIconAfterReturnArchive() {
+    @Severity(SeverityLevel.MINOR)
+    public void testAccessArchiveAlert() {
         app.goTo().gradePage();
         app.grade().openModalNotArchivedGrade();
         app.grade().acceptArchiveGrade();
@@ -63,6 +70,7 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 8)
+    @Severity(SeverityLevel.MINOR)
     public void testReturnFromArchiveGradeAlert() {
         app.goTo().gradePage();
         app.grade().openModalArchivedGrade();
@@ -71,9 +79,8 @@ public class GradeArchiveTest extends TestBase {
 
     }
 
-    //этот точно падает
-
     @Test (priority = 9)
+    @Severity(SeverityLevel.NORMAL)
     public void testInabilityToOpenCardAfterArchive() {
         app.goTo().gradePage();
         app.grade().openModalNotArchivedGrade();
@@ -82,6 +89,7 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 10)
+    @Severity(SeverityLevel.CRITICAL)
     public void testOpenCardAfterReturnArchive() {
         app.goTo().gradePage();
         app.grade().openModalArchivedGrade();
@@ -91,6 +99,7 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 11)
+    @Severity(SeverityLevel.TRIVIAL)
     public void testTextInModalUnArchived() {
         app.goTo().gradePage();
         app.grade().openModalNotArchivedGrade();
@@ -98,6 +107,7 @@ public class GradeArchiveTest extends TestBase {
     }
 
     @Test (priority = 12)
+    @Severity(SeverityLevel.TRIVIAL)
     public void testTextInModalArchived() {
         app.goTo().gradePage();
         app.grade().openModalArchivedGrade();

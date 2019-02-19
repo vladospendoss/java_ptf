@@ -26,3 +26,5 @@ addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/model/ContactData
 *.html
 *.png
 *.html
+.DS_Store
+*.xml
