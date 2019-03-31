@@ -1,0 +1,59 @@
+{
+  "uid" : "99a2f37f35023348",
+  "name" : "testGradeAlertCreation",
+  "title" : "Test grade alert creation",
+  "time" : {
+    "start" : 1550474226716,
+    "stop" : 1550474231264,
+    "duration" : 4548
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "99f3d74bbf651687",
+    "name" : "Gradle suite : Gradle test",
+    "title" : "Gradle suite : Gradle test"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "Gradle suite : Gradle test"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "thread",
+    "value" : "71308@Mac-mini-kuku-epta.local.Test worker(10)"
+  }, {
+    "name" : "testMethod",
+    "value" : "testGradeAlertCreation"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.stqa.pft.wombat_admin.tests.GradeCreationTest"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "testGroup",
+    "value" : "Gradle test"
+  }, {
+    "name" : "testSuite",
+    "value" : "Gradle suite"
+  }, {
+    "name" : "suite-title",
+    "value" : "Gradle suite : Gradle test"
+  }, {
+    "name" : "host",
+    "value" : "Mac-mini-kuku-epta.local"
+  } ],
+  "parameters" : [ ]
+}

@@ -1,0 +1,62 @@
+{
+  "uid" : "85b7f9d57f3bdb95",
+  "name" : "testInabilityToOpenCardAfterArchive",
+  "title" : "Test inability to open card after archive",
+  "time" : {
+    "start" : 1550474135781,
+    "stop" : 1550474142574,
+    "duration" : 6793
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : {
+    "message" : "ElementShouldNot: Element should not have text 'Описание:' {div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-'].findBy(match text 'G1')}\nElement: '<div class=\"wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-__3pH\">G10\nGrade 10\n+\n95 000\n0\n0\nОписание:\nразработчик 10 грейда, рост: Наставник, Техлид, вертикальный рост: Тимлид, Руководитель проектов, Техдиректор</div>'",
+    "stackTrace" : "Element should not have text 'Описание:' {div[class^='wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-'].findBy(match text 'G1')}\nElement: '<div class=\"wrapper__src-gradesBrandNew-views-Grades-containers-GradeItemRoutes-__3pH\">G10\nGrade 10\n+\n95 000\n0\n0\nОписание:\nразработчик 10 грейда, рост: Наставник, Техлид, вертикальный рост: Тимлид, Руководитель проектов, Техдиректор</div>'\nScreenshot: file:/Users/vladislavsavenko/Documents/GitHub/java_ptf/wombat_admin/build/reports/tests/1550474142192.2.png\nPage source: file:/Users/vladislavsavenko/Documents/GitHub/java_ptf/wombat_admin/build/reports/tests/1550474142192.2.html\nTimeout: 4 s.\n\tat com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:63)\n\tat com.codeborne.selenide.commands.ShouldNot.shouldNot(ShouldNot.java:36)\n\tat com.codeborne.selenide.commands.ShouldNot.execute(ShouldNot.java:29)\n\tat com.codeborne.selenide.commands.ShouldNot.execute(ShouldNot.java:12)\n\tat com.codeborne.selenide.commands.Commands.execute(Commands.java:144)\n\tat com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:90)\n\tat com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)\n\tat com.sun.proxy.$Proxy7.shouldNotHave(Unknown Source)\n\tat ru.stqa.pft.wombat_admin.appmanager.GradeHelper.openCardAfterArchive(GradeHelper.java:324)\n\tat ru.stqa.pft.wombat_admin.tests.GradeArchiveTest.testInabilityToOpenCardAfterArchive(GradeArchiveTest.java:81)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)\n\tat org.testng.internal.Invoker.invokeMethod(Invoker.java:643)\n\tat org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)\n\tat org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)\n\tat org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)\n\tat org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)\n\tat org.testng.TestRunner.privateRun(TestRunner.java:782)\n\tat org.testng.TestRunner.run(TestRunner.java:632)\n\tat org.testng.SuiteRunner.runTest(SuiteRunner.java:366)\n\tat org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)\n\tat org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)\n\tat org.testng.SuiteRunner.run(SuiteRunner.java:268)\n\tat org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)\n\tat org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)\n\tat org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)\n\tat org.testng.TestNG.runSuitesLocally(TestNG.java:1169)\n\tat org.testng.TestNG.run(TestNG.java:1064)\n\tat org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:139)\n\tat org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:89)\n\tat org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)\n\tat org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)\n\tat org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)\n\tat org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)\n\tat com.sun.proxy.$Proxy1.stop(Unknown Source)\n\tat org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:123)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)\n\tat org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)\n\tat org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)\n\tat org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)\n\tat org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)\n\tat org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)\n\tat org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)\n\tat java.lang.Thread.run(Thread.java:748)\n"
+  },
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "FAILED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "99f3d74bbf651687",
+    "name" : "Gradle suite : Gradle test",
+    "title" : "Gradle suite : Gradle test"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "Gradle suite : Gradle test"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "testMethod",
+    "value" : "testInabilityToOpenCardAfterArchive"
+  }, {
+    "name" : "thread",
+    "value" : "71308@Mac-mini-kuku-epta.local.Test worker(10)"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "testGroup",
+    "value" : "Gradle test"
+  }, {
+    "name" : "testSuite",
+    "value" : "Gradle suite"
+  }, {
+    "name" : "suite-title",
+    "value" : "Gradle suite : Gradle test"
+  }, {
+    "name" : "host",
+    "value" : "Mac-mini-kuku-epta.local"
+  } ],
+  "parameters" : [ ]
+}

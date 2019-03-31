@@ -1,0 +1,59 @@
+{
+  "uid" : "62f910cb806aa828",
+  "name" : "testTextInModalArchived",
+  "title" : "Test text in modal archived",
+  "time" : {
+    "start" : 1550474170974,
+    "stop" : 1550474171735,
+    "duration" : 761
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 0
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "testId" : null,
+  "suite" : {
+    "uid" : "99f3d74bbf651687",
+    "name" : "Gradle suite : Gradle test",
+    "title" : "Gradle suite : Gradle test"
+  },
+  "steps" : [ ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "labels" : [ {
+    "name" : "suite-name",
+    "value" : "Gradle suite : Gradle test"
+  }, {
+    "name" : "language",
+    "value" : "JAVA"
+  }, {
+    "name" : "thread",
+    "value" : "71308@Mac-mini-kuku-epta.local.Test worker(10)"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"
+  }, {
+    "name" : "framework",
+    "value" : "TestNG"
+  }, {
+    "name" : "testGroup",
+    "value" : "Gradle test"
+  }, {
+    "name" : "testSuite",
+    "value" : "Gradle suite"
+  }, {
+    "name" : "testMethod",
+    "value" : "testTextInModalArchived"
+  }, {
+    "name" : "suite-title",
+    "value" : "Gradle suite : Gradle test"
+  }, {
+    "name" : "host",
+    "value" : "Mac-mini-kuku-epta.local"
+  } ],
+  "parameters" : [ ]
+}

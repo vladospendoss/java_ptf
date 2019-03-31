@@ -17,7 +17,6 @@ public class ApplicationManager {
         this.errorsHelper = new ErrorsHelper();
     }
 
-
     public void init() {
         String login = "grades_admin@smedialink.com";
         String password = "iac5jiB8Y";
@@ -26,15 +25,17 @@ public class ApplicationManager {
         open("http://0.0.0.0:3000/login");
         $(By.cssSelector("img[alt*='Enter.']")).click();
         switchTo().window(1);
-        sleep(4000);
+        sleep(5000);
         $(By.name("login")).setValue(login);
         if ($(By.name("passwd")).isDisplayed()) {
             $(By.name("passwd")).setValue(password).pressEnter();
-        } else{
+        } else
+            {
             $(By.id("passp-field-login")).pressEnter();
             $(By.id("passp-field-passwd")).setValue(password).pressEnter();
         }
         $(By.id("nb-2")).click();
+        sleep(3000);
         switchTo().window(0);
     }
 
