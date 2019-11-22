@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1550575615623" stop="1550575855285" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : QA automation</name>
+    <title>Default Suite : QA automation</title>
+    <test-cases>
+        <test-case start="1550575615698" stop="1550575618884" status="passed">
+            <name>testArchiveGrade</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="QA automation"/>
+                <label name="testClass" value="ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"/>
+                <label name="testMethod" value="testArchiveGrade"/>
+                <label name="host" value="Mac-mini-kuku-epta.local"/>
+                <label name="thread" value="77300@Mac-mini-kuku-epta.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1550575618890" stop="1550575621395" status="passed">
+            <name>testReturnFromArchiveGrade</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="QA automation"/>
+                <label name="testClass" value="ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"/>
+                <label name="testMethod" value="testReturnFromArchiveGrade"/>
+                <label name="host" value="Mac-mini-kuku-epta.local"/>
+                <label name="thread" value="77300@Mac-mini-kuku-epta.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1550575621425" stop="1550575622721" status="passed">
+            <name>testCancelArchiveGrade</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="QA automation"/>
+                <label name="testClass" value="ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"/>
+                <label name="testMethod" value="testCancelArchiveGrade"/>
+                <label name="host" value="Mac-mini-kuku-epta.local"/>
+                <label name="thread" value="77300@Mac-mini-kuku-epta.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1550575622724" stop="1550575624061" status="passed">
+            <name>testCancelReturnFromArchiveGrade</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="QA automation"/>
+                <label name="testClass" value="ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"/>
+                <label name="testMethod" value="testCancelReturnFromArchiveGrade"/>
+                <label name="host" value="Mac-mini-kuku-epta.local"/>
+                <label name="thread" value="77300@Mac-mini-kuku-epta.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1550575624064" stop="1550575626206" status="passed">
+            <name>testNoEditIconFromArchived</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="QA automation"/>
+                <label name="testClass" value="ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"/>
+                <label name="testMethod" value="testNoEditIconFromArchived"/>
+                <label name="host" value="Mac-mini-kuku-epta.local"/>
+                <label name="thread" value="77300@Mac-mini-kuku-epta.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1550575626207" stop="1550575629216" status="passed">
+            <name>testEditIconAfterAddArchive</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="QA automation"/>
+                <label name="testClass" value="ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"/>
+                <label name="testMethod" value="testEditIconAfterAddArchive"/>
+                <label name="host" value="Mac-mini-kuku-epta.local"/>
+                <label name="thread" value="77300@Mac-mini-kuku-epta.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1550575629220" stop="1550575630318" status="passed">
+            <name>testEditIconAfterReturnArchive</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="QA automation"/>
+                <label name="testClass" value="ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"/>
+                <label name="testMethod" value="testEditIconAfterReturnArchive"/>
+                <label name="host" value="Mac-mini-kuku-epta.local"/>
+                <label name="thread" value="77300@Mac-mini-kuku-epta.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1550575630320" stop="1550575633536" status="passed">
+            <name>testReturnFromArchiveGradeAlert</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="QA automation"/>
+                <label name="testClass" value="ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"/>
+                <label name="testMethod" value="testReturnFromArchiveGradeAlert"/>
+                <label name="host" value="Mac-mini-kuku-epta.local"/>
+                <label name="thread" value="77300@Mac-mini-kuku-epta.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1550575633537" stop="1550575855265" status="broken">
+            <name>testInabilityToOpenCardAfterArchive</name>
+            <failure>
+                <message>Test was interrupted</message>
+            </failure>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="QA automation"/>
+                <label name="testClass" value="ru.stqa.pft.wombat_admin.tests.GradeArchiveTest"/>
+                <label name="testMethod" value="testInabilityToOpenCardAfterArchive"/>
+                <label name="host" value="Mac-mini-kuku-epta.local"/>
+                <label name="thread" value="77300@Mac-mini-kuku-epta.local.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1550575615623" stop="1550575855271" status="broken">
+            <name>Default Suite : QA automation</name>
+            <title>Default Suite : QA automation</title>
+            <failure>
+                <message>Test suite was interrupted, some test cases may be lost</message>
+            </failure>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
