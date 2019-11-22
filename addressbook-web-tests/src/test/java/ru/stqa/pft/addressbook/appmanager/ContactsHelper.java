@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.io.File;
 import java.util.List;
@@ -25,6 +26,9 @@ public class ContactsHelper extends HelperBase {
         type(By.name("email"),contactData.getEmail());
         type(By.name("email2"),contactData.getSecondEmail());
         type(By.name("email3"),contactData.getThirdEmail());
+
+
+
     }
 
     public void create(ContactData contact) {
